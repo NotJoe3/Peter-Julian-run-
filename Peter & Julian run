@@ -1,0 +1,51 @@
+import pygame
+
+# تعريف الألوان والثوابت
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+RED = (255, 0, 0)
+BLUE = (0, 0, 255)
+
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 600
+
+# تعريف فئة اللاعب
+class Player:
+    def __init__(self, x, y, color):
+        # ... (تعبئة خصائص اللاعب)
+
+    def move(self):
+        # ... (تحديث موقع اللاعب بناءً على المدخلات)
+
+    def draw(self):
+        # ... (رسم اللاعب على الشاشة)
+
+# إنشاء الأجسام
+player1 = Player(50, 50, BLUE)  # بيتر
+player2 = Player(750, 550, RED)  # جوليان
+
+# تهيئة Pygame
+pygame.init()
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+clock = pygame.time.Clock()
+
+# الحلقة الرئيسية للعبة
+running = True
+while running:
+    # معالجة الأحداث
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    # تحديث حالة اللعبة
+    # ... (تحديث حركة اللاعبين، التحقق من التصادمات، إلخ)
+
+    # رسم الشاشة
+    screen.fill(WHITE)
+    # ... (رسم اللاعبين والعناصر الأخرى)
+    pygame.display.flip()
+
+    # ضبط معدل الإطارات
+    clock.tick(60)
+
+pygame.quit()
